@@ -121,11 +121,23 @@ Type: Any Default: undefined
 
 Will be returned by `onSort` callback in the form of array.
 
+## Sort Element Props
+to further customize the behaviour you can pass in a sort handle class to the element being sorted. If the sort event target doesn't match this class it will not trigger any sorting action. 
+This helps on mobile devices when elements may take up an entire row and the user needs space to scroll.
+```
+...
+  <Sortable onSort={ this.handleSort } >
+    <SortableItem sortHandleClass="sort-handle" >
+  </Sortable>
+...
+```
+
+
 ## Notice
 
 1. Specify your style for `Sortable` and `Sortable Items`, check `sortable.css`, **it is NOT optional!**
 2. Don't forget the `this.renderWithSortable` call in `SortableItem`, or spread props to your component if using decorators.
-3. Since we can't track any children modification in `Sortable`, you have to use `key` to force update `Sortable` when adding/removing children. Checkout [dynamic demo](http://jasonslyvia.github.io/react-anything-sortable/demo/index.html) for more details.
+3. Since we can't track any children modification in `Sortable`, you have to use `key` to force update `Sortable` when adding/removing children. Checkout [dynamic demo](http://jasonslyvia.github.io/react-anything-sortable/demo/#/dynamic) for more details.
 
 
 ## Scripts
@@ -143,3 +155,4 @@ $ npm run demo:watch
 
 1. [stayradiated](https://github.com/stayradiated)
 2. [vizath](https://github.com/vizath)
+3. [zthomas](https://github.com/zthomas)
